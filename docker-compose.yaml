@@ -1,0 +1,38 @@
+version: '3'
+services:
+    # Поект ноды
+    basic-node:
+        container_name: web-node
+        build: 
+            context: .
+        restart: unless-stopped
+        depends_on:
+            - db
+        ports:
+            - '80:3000'
+        networks:
+            - basic_network
+        links:
+            - db
+        environment:
+            DB_HOST: db-basic
+        volumes:
+            - ./app:/var/www/appNode
+    # База данных
+    db:
+        image: mysql:8.0.25
+        restart: unless-stopped
+        container_name: db-basic
+        networks:
+            - basic_network
+        environment:
+            MYSQL_ROOT_PASSWORD: root_pass
+            MYSQL_PASSWORD: mysql_pass
+            MYSQL_USER: dbbasic
+        volumes:
+            - './db:/var/lib/mysql'
+            
+ # Внутреняя сеть контейнеров   
+networks:
+    basic_network:
+        external: true
