@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 
 // Роутинг на qrcode
 router.post('/scan', function(req, res) {
-  qr.toDataURL(req.body.qrcode, (err, src) =>{
+  qr.toDataURL(req.body.text_box, (err, src) =>{
     if(err) console.log('Ошибка генерации')
       res.send(src);  
   });

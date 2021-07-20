@@ -9,10 +9,38 @@ block content
       .card-body
         .mb-3.row
             .input-group.mb-3
-              input(type="text" name="qrcode" id="qr_text" class="form-control" placeholder="Введите значение")
+              input(type="text" id="qr_text" name="text_box" class="form-control" placeholder="Введите значение")
               button(type="sumbit" class="btn btn-primary" onclick="get_QR()") Получить QR-code
         .mb-3.row 
           img(src="" name="images" id="qr_img" alt="")
+
+block scripts 
+  // Sripts
+  script(type="text/javascript" src="assets/vendor/libs/popper/popper.js")
+  script(type="text/javascript" src="assets/vendor/js/bootstrap.js")
+  script(src="assets/vendor/js/sidenav.js")
+  // Libs
+  script(type="text/javascript" src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js")
+  //script(src="assets/vendor/libs/chartjs/chartjs.js")
+  // Demo
+  script(type="text/javascript" src="assets/js/demo.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js") 
+    
+  // Обработчик
+  script.
+        function get_QR() {
+            return axios
+                .post("http://localhost/scan", {
+                  text_box: document.getElementById('qr_text').value
+                })
+                .then(function (response) {
+                  document.getElementById('qr_img')
+                    .setAttribute('src', response.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }       
 
                   
 
