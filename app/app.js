@@ -3,7 +3,6 @@ const app = express();
 const path = require('path');
 const favicon = require('serve-favicon');
 const bp = require('body-parser');
-//const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 var indexRouter = require('./routes/index');
@@ -22,7 +21,6 @@ app.use(logger('dev'));
 // Парсинг body
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: false }));
-//app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

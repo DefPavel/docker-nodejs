@@ -8,10 +8,11 @@ block content
     .card.mb-4
       .card-body
         .mb-3.row
-          form(action="/scan", method="POST")
             .input-group.mb-3
-              input(type="text" name="qrcode" class="form-control" placeholder="Введите значение")
-              button(type="sumbit" class="btn btn-primary") Получить QR-code
+              input(type="text" name="qrcode" id="qr_text" class="form-control" placeholder="Введите значение")
+              button(type="sumbit" class="btn btn-primary" onclick="get_QR()") Получить QR-code
         .mb-3.row 
-          img(src="#{srs}" name="images" alt="")      
+          img(src="" name="images" id="qr_img" alt="")
+
+                  
 

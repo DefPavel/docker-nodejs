@@ -14,10 +14,26 @@ html(lang="ru" class="default-style layout-offcanvas" dir="ltr")
         .layout-container
           // NAVBAR 
           include ../includes/include-navbar
+
           
           .layout-content
             block content
     // Sripts        
     include ../includes/include-scripts
+    script.
+        function get_QR() {
+            return axios
+                .post("http://localhost/scan", {
+                  qrcode: document.getElementById('qr_text').value
+                })
+                .then(function (response) {
+                  document.getElementById('qr_img')
+                    .setAttribute('src', response.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
 
 
