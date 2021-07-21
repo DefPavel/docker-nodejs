@@ -1,0 +1,28 @@
+extends ./layouts/layout-error
+block head-link 
+  link(type="text/css" rel="stylesheet" href="css/error.css")
+
+block content
+  .d-flex.col-md.justify-content-center.align-items-center.order-2.order-md-1.position-relative.p-5
+    .error-bg-skew.bg-white
+    .text-md-left.text-center
+      h4.font-weight-bold.py-3.mb-4= message
+      h6= error.status
+      .card
+        pre.width-block #{error.stack}
+      a(href="/home" class="btn btn-primary") Назад
+
+block status-code
+  .d-flex.col-md-5.justify-content-center.align-items-center.order-1.order-md-2.text-center.text-white.p-5
+    .errors
+      .error-code.font-weight-bolder.mb-2 
+        p 500
+      .error-description.font-weight-light 
+        p Ошибка
+  
+block scripts 
+    // Scripts  
+    script(type="text/javascript" src="assets/vendor/libs/popper/popper.js")
+    script(type="text/javascript" src="assets/vendor/js/bootstrap.js")
+    script(type="text/javascript" src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js")
+    script(type="text/javascript" src="assets/js/demo.js")

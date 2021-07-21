@@ -5,8 +5,8 @@
             i.ion.ion-md-menu.align-middle
     .sidenav-divider.mt-0
     ul.sidenav-inner.py-1
-        li.sidenav-item
-            a(href="#" class="sidenav-link")
+        li(class=(name_link === "/home" ? "sidenav-item active" : "sidenav-item"))
+            a(href=name_link class="sidenav-link")
                 i.sidenav-icon.ion.ion-md-desktop
                 span Главная
 
@@ -25,7 +25,28 @@
                         span Статистика по сотрудникам 
                 li.sidenav-item
                     a(href="#" class="sidenav-link")
-                        span Статистика по переселенцам                    
+                        span Статистика по переселенцам 
+
+        li.sidenav-item
+            a(href="javascript:void(0)" class="sidenav-link sidenav-toggle")
+                i.sidenav-icon.ion.ion-md-home
+                span Общежития
+            ul.sidenav-menu
+                li.sidenav-item
+                    a(href="#" class="sidenav-link")
+                        span Общежитие №2
+                li.sidenav-item
+                    a(href="#" class="sidenav-link")
+                        span Общежитие №3 
+                li.sidenav-item
+                    a(href="#" class="sidenav-link")
+                        span Общежитие №4  
+                li.sidenav-item
+                    a(href="#" class="sidenav-link")
+                        span Общежитие №5  
+                li.sidenav-item
+                    a(href="#" class="sidenav-link")
+                        span Общежитие №7                                                 
 
 
 

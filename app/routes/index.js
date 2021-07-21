@@ -11,5 +11,6 @@ router.get('/home', homeController.getHomeView);
 // Генерация Qrcode
 router.post('/scan', homeController.generateQR);
 
+router.get("/test", homeController.getUsers);
 
 module.exports = router;
