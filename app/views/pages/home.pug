@@ -28,8 +28,8 @@ block scripts
     
   // Обработчик
   script.
-        function get_QR() {
-            return axios
+        async function get_QR() {
+            return await axios
                 .post("http://localhost/scan", {
                   text_box: document.getElementById('qr_text').value
                 })
@@ -38,9 +38,23 @@ block scripts
                     .setAttribute('src', response.data)
                 })
                 .catch(function (error) {
-                    console.log(error);
+                    alert(error);
                 });
-        }       
+        }
+
+        //let btn = document.getElementById("btn");
+        // Получение элемента для вывода результата
+        //let resElement = document.getElementById("qr_img")
+        
+        // Отслеживание события мыши
+        //btn.addEventListener("click", () => {
+            // Отправка GET запроса
+        //    axios.post("/scan", { text_box: document.getElementById('qr_text').value })
+        //        .then(res => {
+                // Вывод на экран ответа сервера
+        //        resElement.setAttribute('src', res.data);
+        //    });
+        //});       
 
                   
 
