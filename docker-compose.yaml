@@ -26,9 +26,9 @@ services:
         networks:
             - basic_network
         environment:
-            MYSQL_ROOT_PASSWORD: root_pass
-            MYSQL_PASSWORD: mysql_pass
-            MYSQL_USER: dbbasic
+            MYSQL_ROOT_PASSWORD: kek
+            MYSQL_PASSWORD: kek
+            MYSQL_USER: saint
         volumes:
             - './db:/var/lib/mysql'
             

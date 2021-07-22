@@ -1,4 +1,4 @@
-const users = [ {"name": "Василий"} ];
+const users = [ {"name": "Василий" , "age": 22}, {"name": "Виталик", "age": 34} ];
 
 module.exports= class User {
  
