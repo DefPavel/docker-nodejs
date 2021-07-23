@@ -1,10 +1,12 @@
-const hostel = {
+require('dotenv').config();
+
+const hostels = {
     client: 'mysql',
     connection: {
         host: process.env.DB_HOST,
-        user: 'saint',
-        password: 'kek',
-        database: process.env.DB_NAME_2,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
     },
     migrations: {
         directory: __dirname + '/migrations/hostel',
@@ -12,3 +14,6 @@ const hostel = {
     },
 }
 
+module.exports = {
+    hostels
+}

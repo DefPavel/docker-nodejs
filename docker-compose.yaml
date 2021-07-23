@@ -1,6 +1,6 @@
 version: '3'
 services:
-    # Поект ноды
+    #1. Главный Проект
     basic-node:
         container_name: web-node
         build: 
@@ -18,9 +18,9 @@ services:
             DB_HOST: db-basic
         volumes:
             - ./app:/var/www/appNode
-    # База данных
+    #2. База данных
     db:
-        image: mysql:8.0.25
+        image: mysql:5.7
         restart: unless-stopped
         container_name: db-basic
         networks:
@@ -31,7 +31,21 @@ services:
             MYSQL_USER: saint
         volumes:
             - './db:/var/lib/mysql'
-            
+
+    # 3. Веб интерфейс Базы данных
+    phpmyadmin:
+        depends_on:
+            - db
+        image: 'phpmyadmin:5.0'
+        container_name: pma
+        restart: always
+        ports:
+            - '5050:80'
+        environment:
+            UPLOAD_LIMIT: 300M
+        networks:
+            - basic_network
+           
  # Внутреняя сеть контейнеров   
 networks:
     basic_network:

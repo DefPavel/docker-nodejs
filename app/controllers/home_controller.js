@@ -1,6 +1,6 @@
 
 const qr = require('qrcode');
-const user = require("../models/users.js");
+const users = require("../models/users.js");
 
 // Вернуть View
 exports.getHomeView = function (req, res){
@@ -13,10 +13,12 @@ exports.generateQR =  function(req, res) {
             res.send('Ошибка генерации');
         res.send(src);
     });
-  };
+};
 
-  exports.getUsers = function(req, res){
+exports.getUsers = function(req, res){
     res.render("pages/test", {
-        users: user.getAll()
+        users: users.getUsers()
     });
-  };
+    console.log(users.getUsers())
+
+};
