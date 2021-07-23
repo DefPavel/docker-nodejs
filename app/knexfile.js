@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 
 /*const hostels = {
     client: process.env.DB_CLIENT,
@@ -25,18 +25,18 @@ module.exports = {
 
 module.exports = {
     hostels: {
-      client: 'mysql',
-      connection: {
-        host: 'db-basic',
-        user: 'root',
-        password: 'kek',
-        database: 'hostels'
-      },
-      migrations: {
-        directory: __dirname + '/database/migrations'
-      },
-      seeds: {
-        directory: __dirname + '/database/seeds'
-      }
-    }
-  };
+        client: "mysql",
+        connection: {
+            host: "db-basic",
+            user: "root",
+            password: "kek",
+            database: "hostels",
+        },
+        migrations: {
+            directory: __dirname + "/database/migrations",
+        },
+        seeds: {
+            directory: __dirname + "/database/seeds",
+        },
+    },
+};
