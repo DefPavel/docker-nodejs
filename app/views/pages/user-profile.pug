@@ -1,0 +1,55 @@
+extends ../layouts/layout-sidebar
+
+block content
+    .container-fluid.flex-grow-1.container-p-y
+        .h4.font-weight-bold.py-3.mb-4= title
+        .row
+            .col-lg-3
+                .card.mb-4
+                    .card-body.text-center.py-4.my-2
+                        i.lnr.lnr-user.display-3.d-inline-block.text-success.mb-3
+                        .text-big.font-weight-semibold.mb-1 Vergels
+                        .text-muted.small Администратор
+                    hr.m-0
+                    .card-body
+                        a(href="#" class="d-block text-body mb-3")
+                            i.ion.ion-md-camera.ui-w-30.text-center.text-lighter  
+                            span  Изменить фотографию
+                        a(href="#" class="d-block text-body mb-3")
+                            i.ion.ion-md-settings.ui-w-30.text-center.text-lighter  
+                            span  Настройки
+                        a(href="#" class="d-block text-body mb-3")
+                            i.ion.ion-md-lock.ui-w-30.text-center.text-lighter  
+                            span  Сменить пароль
+            .col-lg-9
+                .card.mb-4
+                    .card-header Личная информация
+                    .card-body
+                        .row.mb-2   
+                            .col-md-3  Ф.И.О:
+                            .col-md-9 Вергильев Виталий Спартакович
+                        h6.my-3 Контакты
+                        .row.mb-2   
+                            .col-md-3 Телефон:
+                            .col-md-9 072 999 3333  
+                        .row.mb-2   
+                            .col-md-3  Кабинет:
+                            .col-md-9 1-106          
+
+
+            
+
+
+
+
+block scripts 
+  // Sripts
+  script(type="text/javascript" src="assets/vendor/libs/popper/popper.js")
+  script(type="text/javascript" src="assets/vendor/js/bootstrap.js")
+  script(src="assets/vendor/js/sidenav.js")
+  // Libs
+  script(type="text/javascript" src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js")
+  //script(src="assets/vendor/libs/chartjs/chartjs.js")
+  // Demo
+  script(type="text/javascript" src="assets/js/demo.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js")     
