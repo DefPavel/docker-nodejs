@@ -11,7 +11,7 @@ router.get('/home', homeController.getHomeView);
 // Генерация Qrcode
 router.post('/scan', homeController.generateQR);
 // Тестовый роутинг
-router.get("/test", homeController.getUsers);
+router.get("/test", homeController.getHostels);
 // Профиль Пользователя
 router.get("/profile", profileController.GetProfileView);
 

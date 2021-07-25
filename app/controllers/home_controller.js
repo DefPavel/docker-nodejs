@@ -1,5 +1,5 @@
 const qr = require("qrcode");
-const users = require("../models/users.js");
+const hostel = require("../models/hostel.js");
 
 // Вернуть View
 exports.getHomeView = function (req, res) {
@@ -13,11 +13,10 @@ exports.generateQR = function (req, res) {
     });
 };
 
-exports.getUsers = async function (req, res) {
+exports.getHostels = async function (req, res) {
 
     res.render("pages/test", {
-        users: await users.getUsers(),
+        hostel: await hostel.getHostels(),
     });
-    console.log(users.getUsers());
     
 };
