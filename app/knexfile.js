@@ -25,12 +25,12 @@ module.exports = {
 
 module.exports = {
     hostels: {
-        client: "mysql",
+        client: process.env.DB_CLIENT,
         connection: {
-            host: "db-basic",
-            user: "root",
-            password: "kek",
-            database: "hostels",
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            password: rocess.env.DB_PASSWORD,
+            database: process.env.DB_NAME,
         },
         migrations: {
             directory: __dirname + "/database/migrations",

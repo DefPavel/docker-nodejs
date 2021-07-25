@@ -3,10 +3,10 @@ block content
   .container-fluid.flex-grow-1.container-p-y
     .card.mb-4
       .card-body
-         //ul
+         ul
             each val in users
-                li= val  
-         p=users            
+                li= val.name  
+                    
 block scripts 
   // Sripts
   script(type="text/javascript" src="assets/vendor/libs/popper/popper.js")

@@ -1,13 +1,8 @@
 const { hostels } = require("../database/connection");
 module.exports = class User {
-    static getUsers() {
+    static async getUsers() {
         try {
-            hostels("test")
-                .select("name")
-                .then(function (records) {
-                    console.log(records);
-                    return records;
-                });
+            return await hostels("test").select("name"); 
         } catch (error) {
             console.log(error);
         }

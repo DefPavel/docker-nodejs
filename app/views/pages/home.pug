@@ -5,7 +5,7 @@ block content
     h4.font-weight-bold.py-3.mb-4= title
       .text-muted.text-tiny.mt-1
         small.font-weight-normal Сегодня, 19 июля 2021
-    .card.mb-4
+    //.card.mb-4
       .card-body
         .mb-3.row
             .input-group.mb-3
@@ -13,6 +13,111 @@ block content
               button(type="sumbit" class="btn btn-primary" onclick="get_QR()") Получить QR-code
         .mb-3.row 
           img(src="" name="images" id="qr_img" alt="")
+
+    .row 
+      .col-sm
+        .card.mb-4
+          .card-body 
+            .d-flex.align-items-center
+              .lnr.lnr-home.display-4.text-danger
+              .ml-3 
+                .text-muted.small 
+                span Общ. №2
+                .text-large 
+                span 232 / 200
+
+      .col-sm
+        .card.mb-4
+          .card-body 
+            .d-flex.align-items-center
+              .lnr.lnr-home.display-4.text-danger
+              .ml-3 
+                .text-muted.small 
+                span Общ. №3
+                .text-large 
+                span 232 / 200   
+                         
+      .col-sm
+        .card.mb-4
+          .card-body 
+            .d-flex.align-items-center
+              .lnr.lnr-home.display-4.text-danger
+              .ml-3 
+                .text-muted.small 
+                span Общ. №4
+                .text-large 
+                span 232 / 200
+
+      .col-sm
+        .card.mb-4
+          .card-body 
+            .d-flex.align-items-center
+              .lnr.lnr-home.display-4.text-danger
+              .ml-3 
+                .text-muted.small 
+                span Общ. №5
+                .text-large 
+                span 232 / 200
+
+      .col-sm
+        .card.mb-4
+          .card-body 
+            .d-flex.align-items-center
+              .lnr.lnr-home.display-4.text-danger
+              .ml-3 
+                .text-muted.small 
+                span Общ. №7
+                .text-large 
+                span 232 / 200 
+    .card.mb-4 
+      h6.card-header Общежития
+      .card-body 
+        #accordion2 
+          .card.mb-2
+            .card-header 
+              a(class="d-flex justify-content-between text-body collapsed" data-toggle="collapse" aria-expanded="false" href="#accordion2-1")
+                span Общежитие №2
+                .collapse-icon
+            div(id="accordion2-1" class="collapse" data-parent="#accordion2")
+              .card-body  Секция 
+
+          .card.mb-2
+            .card-header 
+              a(class="d-flex justify-content-between text-body collapsed" data-toggle="collapse" aria-expanded="false" href="#accordion2-2")
+                span Общежитие №3
+                .collapse-icon
+            div(id="accordion2-2" class="collapse" data-parent="#accordion2")
+              .card-body  Секция    
+          .card.mb-2
+            .card-header 
+              a(class="d-flex justify-content-between text-body collapsed" data-toggle="collapse" aria-expanded="false" href="#accordion2-3")
+                span Общежитие №4
+                .collapse-icon
+            div(id="accordion2-3" class="collapse" data-parent="#accordion2")
+              .card-body  Секция
+
+
+
+                  
+                  
+    //.card.mb-4
+      h6.card-header Таблица
+      .card-body
+        table.table.table-hover
+          thead 
+            tr 
+              th #
+              th Фамилия
+              th Имя
+              th User Name
+            tbody 
+              each val , key in [1, 2, 3, 4, 5]
+                tr 
+                  td= key
+                  td= 'Вергильев'
+                  td= 'Виталик'
+                  td= 'Спартакович'
+
 
 block scripts 
   // Sripts

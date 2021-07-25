@@ -13,9 +13,11 @@ exports.generateQR = function (req, res) {
     });
 };
 
-exports.getUsers = function (req, res) {
+exports.getUsers = async function (req, res) {
+
     res.render("pages/test", {
-        users: users.getUsers(),
+        users: await users.getUsers(),
     });
     console.log(users.getUsers());
+    
 };
