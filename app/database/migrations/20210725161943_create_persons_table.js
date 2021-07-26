@@ -7,7 +7,10 @@ exports.up = function(knex) {
         table.string('middleName', 100).notNullable().comment('Имя');
         table.string('lastName', 100).notNullable().comment('Отчество');
         table.datetime('birthday').notNullable().comment('Дата рождения');
-        table.string('photo_url',250).notNullable().defaultTo('http://localhost/assets/img/no-photo.jpg').comment('URL фото');
+        table.string('photo_url',500).notNullable().defaultTo('http://localhost/assets/img/no-photo.jpg').comment('URL фото');
+        table.enu('status_person', ['S', 'W', 'I']).notNullable().comment('S - Студент, W - Сотрдуник , I - Переселенец');
+        table.datetime('date_settling').defaultTo(knex.fn.now());
+        table.datetime('date_eviction');
 
 
         table.integer('id_cont').comment('id в Контигемусе');

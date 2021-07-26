@@ -13,7 +13,7 @@ exports.up = function(knex) {
             .onUpdate('Cascade')
             .onDelete('Cascade');
 
-      })
+      });
 };
 
 exports.down = function(knex) {
