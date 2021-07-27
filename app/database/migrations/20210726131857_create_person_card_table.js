@@ -5,8 +5,8 @@ exports.up = function(knex) {
         
         table.increments('id');
         table.integer('id_person').unsigned().comment('Внешний ключ персоны');
-        table.integer('code').notNullable().comment('Номер пропуска');
-        table.enu('status_card', ['T', 'F']).notNullable().defaultTo('F').comment('Статус пропуска : T - Зашел ; F - Вышел');
+        table.integer('code', 8).notNullable().comment('Номер пропуска');
+        table.enu('status_card', ['T', 'F','B']).notNullable().defaultTo('F').comment('Статус пропуска : T - Зашел ; F - Вышел ; B - Заблокирован');
 
 
         table.foreign('id_person')

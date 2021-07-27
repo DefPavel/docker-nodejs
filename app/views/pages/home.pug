@@ -2,9 +2,12 @@ extends ../layouts/layout-sidebar
 
 block content
   .container-fluid.flex-grow-1.container-p-y
-    h4.font-weight-bold.py-3.mb-4= title
-      .text-muted.text-tiny.mt-1
-        small.font-weight-normal Сегодня, 19 июля 2021
+    h4.d-flex.justify-content-between.align-items-center.py-2.mb-4
+      .font-weight-bold=title
+        .text-muted.text-tiny.mt-1
+          small.font-weight-normal Сегодня, 19 июля 2021
+      button.btn.btn-primary(type='button') Заселение &nbsp; 
+        i.sidenav-icon.ion.ion-md-add  
     //.card.mb-4
       .card-body
         .mb-3.row
@@ -24,7 +27,7 @@ block content
                 .text-muted.small 
                 span Общ. №2
                 .text-large 
-                span 232 / 200
+                | 232 / 200
 
       .col-sm
         .card.mb-4
@@ -35,7 +38,7 @@ block content
                 .text-muted.small 
                 span Общ. №3
                 .text-large 
-                span 232 / 200   
+                | 232 / 200   
                          
       .col-sm
         .card.mb-4
@@ -46,7 +49,7 @@ block content
                 .text-muted.small 
                 span Общ. №4
                 .text-large 
-                span 232 / 200
+                | 232 / 200
 
       .col-sm
         .card.mb-4
@@ -57,7 +60,7 @@ block content
                 .text-muted.small 
                 span Общ. №5
                 .text-large 
-                span 232 / 200
+                | 232 / 200
 
       .col-sm
         .card.mb-4
@@ -68,71 +71,69 @@ block content
                 .text-muted.small 
                 span Общ. №7
                 .text-large 
-                span 232 / 200 
+                | 232 / 200 
+
     .card.mb-4 
-      h6.card-header Общежития
-      .card-body 
-        #accordion2 
-          .card.mb-2
-            .card-header 
-              a(class="d-flex justify-content-between text-body collapsed" data-toggle="collapse" aria-expanded="false" href="#accordion2-1")
-                span Общежитие №2
-                .collapse-icon
-            div(id="accordion2-1" class="collapse" data-parent="#accordion2")
-              .card-body  Секция 
-
-          .card.mb-2
-            .card-header 
-              a(class="d-flex justify-content-between text-body collapsed" data-toggle="collapse" aria-expanded="false" href="#accordion2-2")
-                span Общежитие №3
-                .collapse-icon
-            div(id="accordion2-2" class="collapse" data-parent="#accordion2")
-              .card-body  Секция    
-          .card.mb-2
-            .card-header 
-              a(class="d-flex justify-content-between text-body collapsed" data-toggle="collapse" aria-expanded="false" href="#accordion2-3")
-                span Общежитие №4
-                .collapse-icon
-            div(id="accordion2-3" class="collapse" data-parent="#accordion2")
-              .card-body  Секция
-
-
-
-                  
-                  
-    //.card.mb-4
-      h6.card-header Таблица
-      .card-body
-        table.table.table-hover
-          thead 
-            tr 
-              th #
-              th Фамилия
-              th Имя
-              th User Name
-            tbody 
-              each val , key in [1, 2, 3, 4, 5]
-                tr 
-                  td= key
-                  td= 'Вергильев'
-                  td= 'Виталик'
-                  td= 'Спартакович'
+      h5.card-header.with-elements.border-0.pt-3.pb-0
+        span.card-header-title
+          i.ion.ion-md-stats.text-primary 
+          | &nbsp; Статистика посещаемости
+        .card-header-elements.ml-auto
+          div(class="btn-group.btn-group-sm.btn-group-toggle" data-toggle="buttons")
+            label.btn.btn-default.md-btn-flat
+              input(type='radio', name='btn-radio' checked='')
+              | сегодня
+            label.btn.btn-default.md-btn-flat
+              input(type='radio', name='btn-radio')
+              | 7 дней
+            label.btn.btn-default.md-btn-flat
+              input(type='radio', name='btn-radio' )
+              | месяц    
+      hr.border-light.mb-0
+      .row.no-gutters.row-bordered
+        .col-md-8.col-lg-12.col-xl-8
+          .card-body
+            div( style="height:250px;")
+              canvas(id="statistics-chart-1" style="display: block; width: 976px; height: 250px;" width="976px" height="250")
+        .col-md-4.col-lg-12.col-xl-4
+          .card-body
+            .row
+              .col-6.col-xl-5.text-muted.mb-3 Общее количество заселенных:
+              .col-6.col-xl-7.mb-3
+                span.text-big.text-success 2500
+              .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№2:
+              .col-6.col-xl-7.mb-3
+                span.text-big.text-danger 100
+              .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№3:
+              .col-6.col-xl-7.mb-3
+                span.text-big.text-danger 121
+              .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№4:
+              .col-6.col-xl-7.mb-3
+                span.text-big.text-danger 50
+              .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№5:
+              .col-6.col-xl-7.mb-3
+                span.text-big.text-danger 400
+              .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№7:
+              .col-6.col-xl-7.mb-3
+                span.text-big.text-danger 30         
 
 
 block scripts 
   // Sripts
   script(type="text/javascript" src="assets/vendor/libs/popper/popper.js")
   script(type="text/javascript" src="assets/vendor/js/bootstrap.js")
-  script(src="assets/vendor/js/sidenav.js")
+  script(type="text/javascript" src="assets/vendor/js/sidenav.js")
   // Libs
   script(type="text/javascript" src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js")
-  //script(src="assets/vendor/libs/chartjs/chartjs.js")
+  script(type="text/javascript" src="assets/vendor/libs/chartjs/chartjs.js")
+
+  script(type="text/javascript" src="assets/js/dashboards_dashboard-5.js")
   // Demo
   script(type="text/javascript" src="assets/js/demo.js")
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js") 
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js") 
     
   // Обработчик
-  script.
+  //script.
         async function get_QR() {
             return await axios
                 .post("http://localhost/scan", {
