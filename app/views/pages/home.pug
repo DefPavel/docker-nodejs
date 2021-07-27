@@ -79,9 +79,9 @@ block content
           i.ion.ion-md-stats.text-primary 
           | &nbsp; Статистика посещаемости
         .card-header-elements.ml-auto
-          div(class="btn-group.btn-group-sm.btn-group-toggle" data-toggle="buttons")
-            label.btn.btn-default.md-btn-flat
-              input(type='radio', name='btn-radio' checked='')
+          div(class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons")
+            label.btn.btn-default.md-btn-flat.active
+              input(type='radio', name='btn-radio' checked='true')
               | сегодня
             label.btn.btn-default.md-btn-flat
               input(type='radio', name='btn-radio')
@@ -93,8 +93,8 @@ block content
       .row.no-gutters.row-bordered
         .col-md-8.col-lg-12.col-xl-8
           .card-body
-            div( style="height:250px;")
-              canvas(id="statistics-chart-1" style="display: block; width: 976px; height: 250px;" width="976px" height="250")
+            div( style="height:280px;")
+              canvas(id="statistics-chart-1" style="display: block; width: 976px; height: 280px;" width="976px" height="280")
         .col-md-4.col-lg-12.col-xl-4
           .card-body
             .row
