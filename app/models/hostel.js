@@ -38,7 +38,8 @@ module.exports = class Hostel {
                 {hostel: "hostel.name" },
                 {section: "section.name" },
                 {room: "room.name" }
-            );} 
+            );
+        } 
         catch (error) {
             console.log(error);
         }
