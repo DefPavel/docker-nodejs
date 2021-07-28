@@ -5,7 +5,7 @@ block content
     h4.d-flex.justify-content-between.align-items-center.py-2.mb-4
       .font-weight-bold=title
         .text-muted.text-tiny.mt-1
-          small.font-weight-normal Сегодня, 19 июля 2021
+          small.font-weight-normal Сегодня, #{to_day}
       button.btn.btn-primary(type='button') Заселение &nbsp; 
         i.sidenav-icon.ion.ion-md-add  
     //.card.mb-4
@@ -27,7 +27,7 @@ block content
                 .text-muted.small 
                 span Общ. №2
                 .text-large 
-                | 232 / 200
+                | #{count_pers_t_host_2.pers} / #{count_pers_f_host_2.pers}
 
       .col-sm
         .card.mb-4
@@ -38,7 +38,7 @@ block content
                 .text-muted.small 
                 span Общ. №3
                 .text-large 
-                | 232 / 200   
+                | #{count_pers_t_host_3.pers} / #{count_pers_f_host_3.pers} 
                          
       .col-sm
         .card.mb-4
@@ -49,7 +49,7 @@ block content
                 .text-muted.small 
                 span Общ. №4
                 .text-large 
-                | 232 / 200
+                | #{count_pers_t_host_4.pers} / #{count_pers_f_host_4.pers}
 
       .col-sm
         .card.mb-4
@@ -60,7 +60,7 @@ block content
                 .text-muted.small 
                 span Общ. №5
                 .text-large 
-                | 232 / 200
+                | #{count_pers_t_host_5.pers} / #{count_pers_f_host_5.pers}
 
       .col-sm
         .card.mb-4
@@ -71,7 +71,7 @@ block content
                 .text-muted.small 
                 span Общ. №7
                 .text-large 
-                | 232 / 200 
+                | #{count_pers_t_host_7.pers} / #{count_pers_f_host_7.pers}
 
     .card.mb-4 
       h5.card-header.with-elements.border-0.pt-3.pb-0
@@ -100,22 +100,23 @@ block content
             .row
               .col-6.col-xl-5.text-muted.mb-3 Общее количество заселенных:
               .col-6.col-xl-7.mb-3
-                span.text-big.text-success #{count_person}
+                span.text-big.text-success #{count_person.pers }
+
               .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№2:
               .col-6.col-xl-7.mb-3
-                span.text-big.text-danger 100
+                span.text-big.text-danger #{count_blocked_host_2.pers }
               .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№3:
               .col-6.col-xl-7.mb-3
-                span.text-big.text-danger 121
+                span.text-big.text-danger #{count_blocked_host_3.pers }
               .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№4:
               .col-6.col-xl-7.mb-3
-                span.text-big.text-danger 50
+                span.text-big.text-danger #{count_blocked_host_4.pers }
               .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№5:
               .col-6.col-xl-7.mb-3
-                span.text-big.text-danger 400
+                span.text-big.text-danger #{count_blocked_host_5.pers }
               .col-6.col-xl-5.text-muted.mb-3 Кол. заблокированных в Общ.№7:
               .col-6.col-xl-7.mb-3
-                span.text-big.text-danger 30         
+                span.text-big.text-danger #{count_blocked_host_7.pers }         
 
 
 block scripts 

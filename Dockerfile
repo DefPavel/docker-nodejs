@@ -17,8 +17,6 @@ WORKDIR /var/www/appNode
 
 COPY --from=builder /var/www/appNode/node_modules /var/www/appNode/node_modules
 
-COPY --from=builder /var/www/appNode/yarn.lock /var/www/appNode/yarn.lock
-
 COPY ./app /var/www/appNode
 
 RUN chown -R node.node /var/www/appNode

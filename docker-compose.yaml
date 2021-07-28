@@ -20,7 +20,7 @@ services:
             - ./app:/var/www/appNode
     #2. База данных
     db:
-        image: mysql:5.7
+        image: mariadb:10.6.3
         restart: unless-stopped
         container_name: db-basic
         networks:
@@ -36,7 +36,7 @@ services:
     phpmyadmin:
         depends_on:
             - db
-        image: 'phpmyadmin:5.0-fpm-alpine'
+        image: 'phpmyadmin:5.1'
         container_name: pma
         restart: always
         ports:

@@ -8,6 +8,43 @@ module.exports = class Person {
             hostels("persons")
             .join("person_card", {"persons.id": "person_card.id_person"} )
             .count({ pers: "persons.id" })
+            .first();
+        } 
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+     // получить список людей которые вышли  из общежитий
+     static async getCount_True_Hostel(id_hostel) {
+        try {  
+            return await 
+            hostels("hostel")
+            .join("section", {"hostel.id": "section.id_hostel"} )
+            .join("room", {"section.id": "room.id_section"} )
+            .join("person_card", {"room.id": "person_card.id_room"})
+            .count({ pers: "person_card.id" })
+            .where("person_card.status_card", "T") // имеют статус "зашел"
+            .where("hostel.id", id_hostel)
+            .first();
+        } 
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+     // получить список людей которые зашли из общежитий
+     static async getCount_False_Hostel(id_hostel) {
+        try {  
+            return await 
+            hostels("hostel")
+            .join("section", {"hostel.id": "section.id_hostel"} )
+            .join("room", {"section.id": "room.id_section"} )
+            .join("person_card", {"room.id": "person_card.id_room"})
+            .count({ pers: "person_card.id" })
+            .where("person_card.status_card", "F") // имеют статус "вышел"
+            .where("hostel.id", id_hostel)
+            .first();
         } 
         catch (error) {
             console.log(error);
@@ -21,9 +58,11 @@ module.exports = class Person {
             .join("section", {"hostel.id": "section.id_hostel"} )
             .join("room", {"section.id": "room.id_section"} )
             .join("person_card", {"room.id": "person_card.id_room"})
-            .count({ count_person: "person_card.id" })
+            .count({ pers: "person_card.id" })
             .where("person_card.status_card", "B") // имеют статус "заблокирован"
-            .where("hostel.id", id_hostel);
+            .where("hostel.id", id_hostel)
+            .first();
+            
         } 
         catch (error) {
             console.log(error);
@@ -31,7 +70,7 @@ module.exports = class Person {
     }
 
     // получить список людей из общежитий
-    static async getPersonToHostel(hostel_id) {
+    static async getPersonToHostel(id_hostel) {
         try {  
             return await 
             hostels("hostel")
@@ -56,7 +95,7 @@ module.exports = class Person {
                 {status: "person_card.status_card"}, // Статус персон
                 {id_cont : "persons.id_cont"}
 
-            ).where("hostel.id", hostel_id);
+            ).where("hostel.id", id_hostel);
         } 
         catch (error) {
             console.log(error);
