@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const favicon = require("serve-favicon");
 const bp = require("body-parser");
-const logger = require("morgan");
+//const logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 
@@ -14,7 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 //Ссылка на favicon
 app.use(favicon(path.join(__dirname, "/public", "favicon.ico")));
 // Вывыдо ошибок в режиме dev
-app.use(logger("dev"));
+//app.use(logger("dev"));
 
 // Парсинг body
 app.use(bp.json());
