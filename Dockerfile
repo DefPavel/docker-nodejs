@@ -1,15 +1,17 @@
 # Build Stage 1
-FROM node:14-stretch AS builder
+FROM node:14-alpine AS builder
 
 WORKDIR /var/www/appNode
 
 COPY app/package.json .
 
-RUN yarn install
+RUN npm set progress=false && \
+    npm config set depth 0 && \
+    npm i
 
 
 # Build Stage 2
-FROM node:14-stretch
+FROM node:14-alpine
 
 WORKDIR /var/www/appNode
 
@@ -21,7 +23,7 @@ COPY ./app /var/www/appNode
 
 RUN chown -R node.node /var/www/appNode
 
-RUN yarn global add knex
+RUN npm i -g knex
 
 USER node
 
