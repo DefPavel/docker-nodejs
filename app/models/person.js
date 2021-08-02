@@ -1,5 +1,8 @@
 const { hostels } = require("../database/connection");
 
+const moment = require("moment");
+moment.locale("ru");
+
 module.exports = class Person {
 
      // Количество заселенных
@@ -88,11 +91,11 @@ module.exports = class Person {
                 {last_name: "persons.lastName"},
                 {birthday: "persons.birthday"},
                 {photo: "persons.photo_url"},
-                {status_person: "persons.status_person"},
+                {status_person: "persons.status_person"}, // Студент,Сотрудник или Переселенец
                 {date_settling: "persons.date_settling"}, //Дата заселения
                 {date_eviction: "persons.date_eviction"}, // Дата выселения
                 {code: "person_card.code"}, // Номер пропуска 
-                {status: "person_card.status_card"}, // Статус персон
+                {status: "person_card.status_card"}, // Статус Зашел или Вышел
                 {id_cont : "persons.id_cont"}
 
             ).where("hostel.id", id_hostel);
