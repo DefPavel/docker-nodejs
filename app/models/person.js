@@ -77,7 +77,7 @@ module.exports = class Person {
             .join("section", {"hostel.id": "section.id_hostel"} )
             .join("room", {"section.id": "room.id_section"} )
             .join("person_card", {"room.id": "person_card.id_room"})
-            .join("person_move", {"person_card.id": "person_move.id_card"})
+            //.join("person_move", {"person_card.id": "person_move.id_card"})
             .join("persons", {"person_card.id_person": "persons.id"})
             .select(
                 {hostel: "hostel.name" },
@@ -110,7 +110,7 @@ module.exports = class Person {
             .join("section", {"hostel.id": "section.id_hostel"} )
             .join("room", {"section.id": "room.id_section"} )
             .join("person_card", {"room.id": "person_card.id_room"})
-            .join("person_move", {"person_card.id": "person_move.id_card"})
+            //.join("person_move", {"person_card.id": "person_move.id_card"})
             .join("persons", {"person_card.id_person": "persons.id"})
             .select(
                 {hostel: "hostel.name" },
@@ -143,7 +143,7 @@ module.exports = class Person {
             .join("section", {"hostel.id": "section.id_hostel"} )
             .join("room", {"section.id": "room.id_section"} )
             .join("person_card", {"room.id": "person_card.id_room"})
-            .join("person_move", {"person_card.id": "person_move.id_card"})
+            //.join("person_move", {"person_card.id": "person_move.id_card"})
             .join("persons", {"person_card.id_person": "persons.id"})
             .select(
                 {hostel: "hostel.name" },

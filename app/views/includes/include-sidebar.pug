@@ -13,7 +13,7 @@
 
         //li.sidenav-divider.mb-1
 
-        li.sidenav-item
+        li(class=(name_link.includes("stat") ? "sidenav-item open" : "sidenav-item"))
             a(href="javascript:void(0)" class="sidenav-link sidenav-toggle")
                 i.sidenav-icon.ion.ion-md-pie
                 | Статистика
@@ -28,25 +28,25 @@
                     a(href="#" class="sidenav-link")
                         | Статистика по переселенцам 
 
-        li.sidenav-item
+        li(class=(name_link.includes("hostel") ? "sidenav-item open" : "sidenav-item"))
             a(href="javascript:void(0)" class="sidenav-link sidenav-toggle")
                 i.sidenav-icon.ion.ion-md-home
                 | Общежития
             ul.sidenav-menu
-                li.sidenav-item
-                    a(href="#" class="sidenav-link")
+                li(class=(name_link === "/hostel/1" ? "sidenav-item active" : "sidenav-item"))
+                    a(href="/hostel/1" class="sidenav-link")
                         | Общежитие №2
-                li.sidenav-item
-                    a(href="#" class="sidenav-link")
+                li(class=(name_link === "/hostel/2" ? "sidenav-item active" : "sidenav-item"))
+                    a(href="/hostel/2" class="sidenav-link")
                         | Общежитие №3 
-                li.sidenav-item
-                    a(href="#" class="sidenav-link")
+                li(class=(name_link === "/hostel/3" ? "sidenav-item active" : "sidenav-item"))
+                    a(href="/hostel/3" class="sidenav-link")
                         | Общежитие №4  
-                li.sidenav-item
-                    a(href="#" class="sidenav-link")
+                li(class=(name_link === "/hostel/4" ? "sidenav-item active" : "sidenav-item"))
+                    a(href="/hostel/4" class="sidenav-link")
                         | Общежитие №5  
-                li.sidenav-item
-                    a(href="#" class="sidenav-link")
+                li(class=(name_link === "/hostel/5" ? "sidenav-item active" : "sidenav-item"))
+                    a(href="/hostel/5" class="sidenav-link")
                         | Общежитие №7                                                 
 
 

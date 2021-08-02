@@ -2,6 +2,8 @@ const { hostels } = require("../database/connection");
 
 module.exports = class Hostel {
   
+    
+
     // Вернуть только список зданий
     static async getHostels() {
         try { return await hostels("hostel").select("id","name"); } 
@@ -10,6 +12,13 @@ module.exports = class Hostel {
         }
     }
 
+     // Вернуть здание по Id
+     static async getHostelById(id_hostel) {
+        try { return await hostels("hostel").select("id","name").where("id", id_hostel).first(); } 
+        catch (error) {
+            console.log(error);
+        }
+    }
     // Вернуть только список зданий
     static async getSection(id_hostel) {
         try { return await hostels("section").select("id","name").where("id_hostel", id_hostel); } 
