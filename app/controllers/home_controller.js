@@ -1,53 +1,7 @@
 const qr = require("qrcode");
-
-const dateFormat = require("dateformat");
-dateFormat.i18n = {
-    dayNames: [
-      "Вс.",
-      "Пн.",
-      "Вт.",
-      "Ср.",
-      "Чт.",
-      "Пт.",
-      "Сб.",
-      "Воскресенье",
-      "Понедельник",
-      "Вторник",
-      "Среда",
-      "Четверг",
-      "Пятница",
-      "Суббота",
-    ],
-    monthNames: [
-      "Янв",
-      "Фев",
-      "Мар",
-      "Апр",
-      "Май",
-      "Июн",
-      "Июл",
-      "Авг",
-      "Сен",
-      "Окт",
-      "Ноя",
-      "Дек",
-      "Январь",
-      "Февраль",
-      "Март",
-      "Апрель",
-      "Май",
-      "Июнь",
-      "Июль",
-      "Август",
-      "Сентябрь",
-      "Октябрь",
-      "Ноябрь",
-      "Декабрь",
-    ],
-  };
-
+const moment = require("moment");
+moment.locale("ru");
 const hostel = require("../models/hostel.js");
-
 const person = require("../models/person.js");
 
 // Вернуть View
@@ -56,7 +10,7 @@ exports.getHomeView = async function (req, res) {
     { 
         title: "Главная",
         name_link: "/home",
-        to_day: dateFormat(new Date(),"longDate", true),
+        to_day: moment().format('LL'),
         count_person: await person.getCountPerson(),
 
         // Количество заблокированных
